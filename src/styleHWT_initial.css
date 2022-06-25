@@ -1,0 +1,10 @@
+* {
+  box-sizing: border-box;
+  font-size: 10px;
+}
+
+/* Style the body */
+body {
+  font-family: Arial;
+  margin: 0;
+}

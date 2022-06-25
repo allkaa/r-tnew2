@@ -1,0 +1,85 @@
+Old version:
+http://localhost:8080/
+index.js:139 0strTic=http://localhost:8080/
+index.js:142 1strTic=
+Unl.js:172 Unl.js props:[object Object]
+Unl.js:173 {txn_id: 10000000, searchIni: ''}
+Unl.js:477 NavHome location.search:
+Unl.js:478
+
+C:\react\react-tutorial>go run .
+Server starts with txnid= 10086614
+ListenAndServe http://localhost:8080/
+r.Mehtod: GET r.URL.Path: / r.RequsetURI: /
+r.Mehtod: GET r.URL.Path: /static/js/main.71aff63b.chunk.js r.RequsetURI: /static/js/main.71aff63b.chunk.js
+r.Mehtod: GET r.URL.Path: /static/js/2.74f3e04d.chunk.js r.RequsetURI: /static/js/2.74f3e04d.chunk.js
+r.Mehtod: GET r.URL.Path: /static/css/main.2306de98.chunk.css r.RequsetURI: /static/css/main.2306de98.chunk.css
+r.Mehtod: GET r.URL.Path: /static/css/main.2306de98.chunk.css.map r.RequsetURI: /static/css/main.2306de98.chunk.css.map
+r.Mehtod: GET r.URL.Path: /static/js/2.74f3e04d.chunk.js.map r.RequsetURI: /static/js/2.74f3e04d.chunk.js.map
+r.Mehtod: GET r.URL.Path: /static/js/main.71aff63b.chunk.js.map r.RequsetURI: /static/js/main.71aff63b.chunk.js.map
+r.Mehtod: GET r.URL.Path: /static/media/keno.d1bc5086.png r.RequsetURI: /static/media/keno.d1bc5086.png
+r.Mehtod: GET r.URL.Path: /static/media/photo5283283956105588195-1-348x215.40ad6771.jpg r.RequsetURI: /static/media/photo5283283956105588195-1-348x215.40ad6771.jpg
+r.Mehtod: GET r.URL.Path: /static/media/loto3.f7c97c08.png r.RequsetURI: /static/media/loto3.f7c97c08.png
+r.Mehtod: GET r.URL.Path: /static/media/super_loto.c8f40c3a.png r.RequsetURI: /static/media/super_loto.c8f40c3a.png
+r.Mehtod: GET r.URL.Path: /static/media/maxima.5b485f04.png r.RequsetURI: /static/media/maxima.5b485f04.png
+r.Mehtod: GET r.URL.Path: /static/media/SPEED_ICON.0db9af09.0db9af09.svg r.RequsetURI: /static/media/SPEED_ICON.0db9af09.0db9af09.svg
+r.Mehtod: GET r.URL.Path: /static/media/blitz.469d03d8.svg r.RequsetURI: /static/media/blitz.469d03d8.svg
+==================================================================================
+
+New version:
+http://localhost:8080/
+index.js:139 0strTic=http://localhost:8080/
+index.js:142 1strTic=
+Unl.js:172 Unl.js props:[object Object]
+Unl.js:173 Object
+  searchIni: ""
+  txn_id: 10000000
+  [[Prototype]]: Object
+Unl.js:172 Unl.js props:undefined
+Unl.js:173 undefined
+Unl.js:172 Unl.js props:[object Object]
+Unl.js:173 Object
+Unl.js:172 Unl.js props:undefined
+Unl.js:173 undefined
+react-dom.production.min.js:189 Error
+    at b (router.ts:5:20)
+    at components.tsx:291:5
+    at react.production.min.js:19:182
+    at react.production.min.js:18:85
+    at L (react.production.min.js:16:230)
+    at E (react.production.min.js:18:52)
+    at Object.forEach (react.production.min.js:19:165)
+    at V (components.tsx:275:3)
+    at components.tsx:306:24
+    at react.production.min.js:19:182
+ms @ react-dom.production.min.js:189
+react-dom.production.min.js:283 Uncaught Error
+    at b (router.ts:5:20)
+    at components.tsx:291:5
+    at react.production.min.js:19:182
+    at react.production.min.js:18:85
+    at L (react.production.min.js:16:230)
+    at E (react.production.min.js:18:52)
+    at Object.forEach (react.production.min.js:19:165)
+    at V (components.tsx:275:3)
+    at components.tsx:306:24
+    at react.production.min.js:19:182
+
+Server starts with txnid= 10043333
+ListenAndServe http://localhost:8080/
+r.Mehtod: GET r.URL.Path: / r.RequsetURI: /
+r.Mehtod: GET r.URL.Path: /static/js/main.79f5ef3f.js r.RequsetURI: /static/js/main.79f5ef3f.js
+r.Mehtod: GET r.URL.Path: /static/css/main.c438f97b.css r.RequsetURI: /static/css/main.c438f97b.css
+r.Mehtod: GET r.URL.Path: /static/media/UNL_CAPASITY_HORIZONTAL_BLUE_LARGE.8cafb623.ea65d7c3c7655f9b8e7ca994bd4de0ca.svg r.RequsetURI: /static/media/UNL_CAPASITY_HORIZONTAL_BLUE_LARGE.8cafb623.ea65d7c3c7655f9b8e7ca994bd4de0ca.svg
+r.Mehtod: GET r.URL.Path: /static/media/home-2-16.2847ec5151804559620e.ico r.RequsetURI: /static/media/home-2-16.2847ec5151804559620e.ico
+r.Mehtod: GET r.URL.Path: /static/media/photo5283283956105588195-1-348x215.a333786964c7d8bc8eaf.jpg r.RequsetURI: /static/media/photo5283283956105588195-1-348x215.a333786964c7d8bc8eaf.jpg
+r.Mehtod: GET r.URL.Path: /static/media/super_loto.dfcf39aef43761dfa7d6.png r.RequsetURI: /static/media/super_loto.dfcf39aef43761dfa7d6.png
+r.Mehtod: GET r.URL.Path: /static/media/maxima.6ed48ec15d5f99a9fc46.png r.RequsetURI: /static/media/maxima.6ed48ec15d5f99a9fc46.png
+r.Mehtod: GET r.URL.Path: /static/media/keno.5f5bc1bfd10f6416f165.png r.RequsetURI: /static/media/keno.5f5bc1bfd10f6416f165.png
+r.Mehtod: GET r.URL.Path: /static/media/loto3.40449683254f229b8007.png r.RequsetURI: /static/media/loto3.40449683254f229b8007.png
+r.Mehtod: GET r.URL.Path: /static/media/SPEED_ICON.0db9af09.a9b91c6aa7f159c5204c0a6b124954bf.svg r.RequsetURI: /static/media/SPEED_ICON.0db9af09.a9b91c6aa7f159c5204c0a6b124954bf.svg
+r.Mehtod: GET r.URL.Path: /static/media/blitz.44466b5b029f27af073f15b969ea25fa.svg r.RequsetURI: /static/media/blitz.44466b5b029f27af073f15b969ea25fa.svg
+r.Mehtod: GET r.URL.Path: /static/js/main.79f5ef3f.js.map r.RequsetURI: /static/js/main.79f5ef3f.js.map
+r.Mehtod: GET r.URL.Path: /static/css/main.c438f97b.css.map r.RequsetURI: /static/css/main.c438f97b.css.map
+Detaching and terminating target process
+dlv dap (14124) exited with code: 0

@@ -1,0 +1,54 @@
+Stub started - use Ctrl-C to exit
+NIC card with IP=10.8.194.3 found.
+There are 24 available connections
+TCP Server Certificate subject CN=unl.works found
+TCP Server Certificate issuer CN=unl.works found
+Waiting for a connection...000000000000000000000000
+
+
+Connection Con0 OPENED with 10.8.194.191:47376 by 10.8.194.3:42001 at 23.08.2019 11:07:19
+
+Received from client>POST /?testDebian HTTP/1.1
+Host: 10.8.194.3:42001
+Connection: keep-alive
+Content-Length: 14
+Pragma: no-cache
+Cache-Control: no-cache
+Origin: http://unl.test:8080
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36
+Content-Type: text/plain
+Accept: */*
+Referer: http://unl.test:8080/
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.9,ru;q=0.8
+
+{param1: test}|
+Connection Con0, CLOSED with 10.8.194.191:47376 by 10.8.194.3:42001 at 23.08.2019 11:07:19
+Waiting for a connection...100000000000000000000000
+
+
+Connection Con1 OPENED with 10.8.194.191:50456 by 10.8.194.3:42001 at 23.08.2019 11:13:38
+
+Received from client>OPTIONS /?testDebian HTTP/1.1
+Host: 10.8.194.3:42001
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+Access-Control-Request-Method: POST
+Origin: http://unl.test:8080
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36
+Access-Control-Request-Headers: content-type
+Accept: */*
+Referer: http://unl.test:8080/
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.9,ru;q=0.8
+
+|
+Connection Con1, CLOSED with 10.8.194.191:50456 by 10.8.194.3:42001 at 23.08.2019 11:13:38
+Waiting for a connection...210000000000000000000000
+
+If 'Content-Type': 'application/json' in POST request then Browser reports error in console window:
+Access to fetch at 'http://10.8.194.3:42001/?testDebian' from origin 'http://unl.test:8080' has been blocked
+ by CORS policy: Request header field content-type is not allowed by Access-Control-Allow-Headers in preflight response.
+Cross-Origin Read Blocking (CORB) blocked cross-origin response http://10.8.194.3:42001/?testDebian with MIME type text/xml.
+ See https://www.chromestatus.com/feature/5629709824032768 for more details.
