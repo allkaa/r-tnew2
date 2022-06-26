@@ -35,6 +35,7 @@
         "cwd":"${workspaceFolder}",
         "runtimeArgs": ["--experimental-modules"],
     },
+    // To use VS debugger with Chrome first start developer server: npm start
     {
       "name": "Chrome",
       "type": "chrome",
