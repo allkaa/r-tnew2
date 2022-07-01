@@ -2,7 +2,7 @@ import {NavLink,  Outlet, useSearchParams, useLocation} from "react-router-dom";
 import { getInvoices } from "../data";
 
 // Using instead of NavLink to preserve location.search in URL.
-function QueryNavLink({ to, key, ...props }) {
+function QueryNavLink({ to, ...props }) {
   console.log("QueryNavLink to:");
   console.log(to);
   //console.log("QueryNavLink key:");
