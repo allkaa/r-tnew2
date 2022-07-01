@@ -41,6 +41,7 @@ export function getInvoice(number) {
   );
 }
 
+// Modify initially created invoices var filtering out deleted rec.
 export function deleteInvoice(number) {
   invoices = invoices.filter(
     (invoice) => invoice.number !== number

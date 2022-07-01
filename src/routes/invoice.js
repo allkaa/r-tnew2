@@ -10,7 +10,9 @@ export default function Invoice() {
   let location = useLocation();
   let params = useParams();
   let invoice = getInvoice(parseInt(params.invoiceId, 10));
+  console.log("Invoice location:");
   console.log(location);
+  console.log("Invoice params:");
   console.log(params);
   return (
     <main style={{ padding: "1rem" }}>
@@ -23,10 +25,10 @@ export default function Invoice() {
         <button
           onClick={() => {
             deleteInvoice(invoice.number);
-            navigate("/invoices" + location.search);
+            navigate("/invoices" + location.search); // navigate to index root preserving location.search in URL.
           }}
         >
-          Delete
+          Delete Invoice
         </button>
       </p>
     </main>

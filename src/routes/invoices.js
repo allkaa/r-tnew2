@@ -1,10 +1,26 @@
 import {NavLink,  Outlet, useSearchParams, useLocation} from "react-router-dom";
 import { getInvoices } from "../data";
 
+// Using instead of NavLink to preserve location.search in URL.
+function QueryNavLink({ to, key, ...props }) {
+  console.log("QueryNavLink to:");
+  console.log(to);
+  //console.log("QueryNavLink key:");
+  //console.log(key);
+  console.log("QueryNavLink props:");
+  console.log(props);
+  //for (const arg of props) {
+  //  console.log(arg);
+  //}
+  let location = useLocation();
+  return <NavLink to={to + location.search} {...props} />;
+}
+
 export default function Invoices() {
   let invoices = getInvoices();
   let [searchParams, setSearchParams] = useSearchParams();
   let location = useLocation();
+  console.log("Invoices location:");
   console.log(location);
   return (
     <div style={{ display: "flex" }}>
@@ -15,9 +31,10 @@ export default function Invoices() {
         }}
       >
         <input
-          value={searchParams.get("filter") || ""}
+          value={searchParams.get("filter") || ""} // "filter" is reserved word.
           onChange={(event) => {
             let filter = event.target.value;
+            console.log("Invoices filter:");
             console.log(filter);
             if (filter) {
               setSearchParams({ filter });
@@ -28,13 +45,14 @@ export default function Invoices() {
         />
         {invoices
           .filter((invoice) => {
-            let filter = searchParams.get("filter");
+            let filter = searchParams.get("filter"); // "filter" is reserved word.
             if (!filter) return true;
             let name = invoice.name.toLowerCase();
             return name.startsWith(filter.toLowerCase());
           })
+          // Using QueryNavLink instead of NavLink to preserve location.search in URL.
           .map((invoice) => (
-            <NavLink
+            <QueryNavLink
               style={({ isActive }) => {
               return {
                 display: "block",
@@ -46,7 +64,7 @@ export default function Invoices() {
               key={invoice.number}
             >
             {invoice.name}
-            </NavLink>
+            </QueryNavLink>
             )
           )
         }
