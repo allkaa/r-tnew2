@@ -166,7 +166,7 @@ let myInfoRefk10 = React.createRef();
 let myInfoRefka = React.createRef();
 let searchIni = ""
 
-// Main function component
+// Main function component - get control on starting called by index.js
 function MainFuncComponent(props) {
   console.log('Unl.js props:' + props);
   console.log(props); // {txn_id: 10000000}
