@@ -29,6 +29,8 @@ const formNameIni = 'index.html';
 //let formNameIni = 'indexForm.html';
 
 const fs = require('fs');
+
+/* Exclude refs to addon thru versions incompatible for test only.
 let addon;
 let linux = false;
 try {
@@ -54,6 +56,7 @@ if (linux) { // Debian linux addon.node.
 else {
   addon = require('./addon'); // Windows addnon.node
 }
+*/
 
 const http = require('http');
 const urlval = 'http://10.8.194.3:9994/'; // project WinTicsCheckNoSslTEST new at 'http://10.8.194.3:9994/'
@@ -1695,7 +1698,7 @@ function decrEx(strGGuardEnc, strTicEnc) {
   var strGguardIn, strNumberIn; // var strJulian;
   var strGGuard, strTicNum, strCheckDigits;
   var strArr; // intVar, i;
-  var strGGuardArr, strJulianArr, strTicNumArr, strCheckDigitsArr;
+  //var strGGuardArr, strJulianArr, strTicNumArr, strCheckDigitsArr; //exlude refs to addon thru vers incompatibe for test only.
 
   //console.log(`input: ${strGGuardEnc} ${strInEnc}`);
 
@@ -1721,12 +1724,14 @@ function decrEx(strGGuardEnc, strTicEnc) {
   if (! Number.isInteger(Number(strArr[1]))) return "ERROR3"; 
   if (! Number.isInteger(Number(strArr[2]))) return "ERROR3"; 
 
+  /* Exclude refs to addon.node thru versions incompatible for test only.
   //var strGGuardArr, strJulianArr, strTicNumArr, strChcekDigitsArr;
   strGGuardArr = strGguardIn.split("");
   strJulianArr = strArr[0].split("");
   strTicNumArr = strArr[1].split("");
   strCheckDigitsArr = strArr[2].split("");
 
+  
   strGGuard = addon.unld(strGGuardArr[0], strGGuardArr[1], strGGuardArr[2], strGGuardArr[3], strGGuardArr[4], strGGuardArr[5], "G", "G", strJulianArr[0], strJulianArr[1], strJulianArr[2]); // gGuard.
   //console.log('Return string:', strGGuard + " typeof: " + typeof(strGGuard)); // gguard.
   strTicNum = addon.unld(strTicNumArr[0], strTicNumArr[1], strTicNumArr[2], strTicNumArr[3], strTicNumArr[4], strTicNumArr[5], strTicNumArr[6], strTicNumArr[7], strJulianArr[0], strJulianArr[1], strJulianArr[2]); // external number.
@@ -1737,7 +1742,12 @@ function decrEx(strGGuardEnc, strTicEnc) {
   //console.log(`output: ${strOut}`);
   //strArr = strIn.split("-");
   //strOut = strArr[2] + "-" + strArr[1] + "-" + strArr[0];
-  
+  */
+  strGGuard = "123456"
+  strTicNum = "12345678"
+  strCheckDigits = "1234567"
+  strOut = strGGuard + " " + strArr[0] + "-" + strTicNum + "-" + strCheckDigits;
+
   return strOut;
 } // end of function decrEx(strGGuardEnc, strInEnc).
 
