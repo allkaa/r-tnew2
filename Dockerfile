@@ -6,4 +6,5 @@ COPY ["package.json", "package-lock.json*", "./"]
 RUN npm install --omit=dev
 COPY . .
 EXPOSE  8081
-CMD [ "node", "nodeServerUNL_NoSsl.js" ]
+CMD ["/bin/bash"]
+#CMD [ "node", "nodeServerUNL_NoSsl.js" ]
