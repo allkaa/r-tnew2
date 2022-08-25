@@ -92,9 +92,9 @@ console.log('==================================== ' + dtVar.getSeconds() + "." +
 */
 
 // https://localhost:8081
-//const hostname = 'localhost';
+const hostname = 'localhost';
 // https://unl.test:8081
-const hostname = 'unl.test';
+//const hostname = 'unl.test';
 //const port = process.env.PORT; //  Windows - default port is 1337 for WebApp and 1542 for ConsoleApp;
 const port = 8081; // for Linux must be set manually;
 
