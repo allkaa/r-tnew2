@@ -138,8 +138,8 @@ server.on('connection', (socket) => {
 */
 
 server.on('request', (req, res) => { // request is <http.IncomingMessage>, response is <http.ServerResponse>
-  console.log(`req.url =>` + req.url)
-  ///*
+  //console.log(`req.url =>` + req.url)
+  //
   req.on('error', (err) => {
     // This prints the error message and stack trace to `stderr`.
     console.log(`httpsServer request 'error' event - error stack: ==> ` + dtVar.getSeconds() + "." + dtVar.getMilliseconds());
@@ -149,7 +149,7 @@ server.on('request', (req, res) => { // request is <http.IncomingMessage>, respo
     console.log(`httpsServer response 'error' event - error code: ==> ` + dtVar.getSeconds() + "." + dtVar.getMilliseconds());
     console.error(err);
   });
-  //*/
+  //
   // The destructuring assignment syntax is a JavaScript expression that makes it possible to unpack values from arrays,
   // or properties from objects, into distinct variables.
   //const { method, url, headers } = req;
