@@ -30,8 +30,8 @@ const formNameIni = 'index.html';
 
 const fs = require('fs');
 
-/* Exclude refs to addon thru versions incompatible for test only.
-let addon;
+// Exclude refs to addon thru versions incompatible for test only.
+//let addon;
 let linux = false;
 try {
   let dir = fs.opendirSync('./build');
@@ -45,11 +45,14 @@ try {
     }
   }
   dir.closeSync();
+  console.log(`NO error reading ./build dir`)
 } catch (error) {
+  console.log(`Error reading ./build dir`)
   linux = false;
 }
 
 console.log('Debian linux type: ' + linux);
+/*
 if (linux) { // Debian linux addon.node.
   addon = require('./build/addon');
 }
@@ -140,6 +143,7 @@ server.on('connection', (socket) => {
 */
 
 server.on('request', (req, res) => { // request is <http.IncomingMessage>, response is <http.ServerResponse>
+  console.log(`req.url =>` + req.url)
   req.on('error', (err) => {
     // This prints the error message and stack trace to `stderr`.
     console.log(`httpsServer request 'error' event - error stack: ==> ` + dtVar.getSeconds() + "." + dtVar.getMilliseconds());
@@ -548,7 +552,7 @@ server.listen(port, hostname, () => {
 });
 
 dtVar = new Date();
-console.log('End Serer main PROGAM path after server.listen(port, hostname, callback) ' + dtVar.getSeconds() + "." + dtVar.getMilliseconds());
+console.log('End Server main PROGAM path after server.listen(port, hostname, callback) ' + dtVar.getSeconds() + "." + dtVar.getMilliseconds());
 
 // <==================================== GetResults =====================================>
 function GetResults(game, drawnum, res2) {
