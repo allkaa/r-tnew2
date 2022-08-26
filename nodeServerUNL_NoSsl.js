@@ -102,7 +102,7 @@ const hostname = 'localhost';
 const port = 8000; // for Linux must be set manually;
 
 dtVar = new Date();
-console.log('Before https.createServer() ' + dtVar.getSeconds() + "." + dtVar.getMilliseconds());
+console.log('Before http.createServer() ' + dtVar.getSeconds() + "." + dtVar.getMilliseconds());
 
 /*
 let optSsl;
@@ -549,16 +549,16 @@ console.log('After https.createServer ' + dtVar.getSeconds() + "." + dtVar.getMi
 // Begin accepting connections on the specified port and hostname.
 // If hostname is omitted, server will accept connections on the unspecified IPv6 address (::) when IPv6 is available,
 // or the unspecified IPv4 address (0.0.0.0) otherwise.
-console.log(`Server running and listening at http://${hostname}:${port}/ ` + dtVar.getSeconds() + "." + dtVar.getMilliseconds()); // ${expression} is place holders in template literal enclosed by the back-tick (` `) (grave accent) characters.
-/*
+//console.log(`Server running and listening at http://${hostname}:${port}/ ` + dtVar.getSeconds() + "." + dtVar.getMilliseconds()); // ${expression} is place holders in template literal enclosed by the back-tick (` `) (grave accent) characters.
+///*
 //server.listen(port, hostname, () => {
 server.listen(port, hostname, () => {
   // Place holders in template literals are indicated by the $ (Dollar sign) and curly braces e.g. (${expression}).
   //console.log(`Server running and listening at https://${hostname}:${port}/ ` + dtVar.getSeconds() + "." + dtVar.getMilliseconds()); // ${expression} is place holders in template literal enclosed by the back-tick (` `) (grave accent) characters.
   console.log(`Server running and listening at http://${hostname}:${port}/ ` + dtVar.getSeconds() + "." + dtVar.getMilliseconds()); // ${expression} is place holders in template literal enclosed by the back-tick (` `) (grave accent) characters.
 });
-*/
-server.listen(8000);
+//*/
+//server.listen(8000);
 
 dtVar = new Date();
 console.log('End Server main PROGAM path after server.listen(port, hostname, callback) ' + dtVar.getSeconds() + "." + dtVar.getMilliseconds());
