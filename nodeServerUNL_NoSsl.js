@@ -94,13 +94,6 @@ dtVar = new Date();
 console.log('==================================== ' + dtVar.getSeconds() + "." + dtVar.getMilliseconds());
 */
 
-// https://localhost:8081
-const hostname = 'localhost';
-// https://unl.test:8081
-//const hostname = 'unl.test';
-//const port = process.env.PORT; //  Windows - default port is 1337 for WebApp and 1542 for ConsoleApp;
-const port = 8000; // for Linux must be set manually;
-
 dtVar = new Date();
 console.log('Before http.createServer() ' + dtVar.getSeconds() + "." + dtVar.getMilliseconds());
 
@@ -558,8 +551,14 @@ server.listen(port, hostname, () => {
   console.log(`Server running and listening at http://${hostname}:${port}/ ` + dtVar.getSeconds() + "." + dtVar.getMilliseconds()); // ${expression} is place holders in template literal enclosed by the back-tick (` `) (grave accent) characters.
 });
 */
-server.listen(8000)
+// https://localhost:8081
+//const hostname = 'localhost';
+// https://unl.test:8081
+//const hostname = 'unl.test';
+//const port = process.env.PORT; //  Windows - default port is 1337 for WebApp and 1542 for ConsoleApp;
+const port = 8000; // for Linux must be set manually;
 //server.listen(port, hostname, undefined, undefined);
+server.listen(port); // works only this form under Docker image.
 
 dtVar = new Date();
 console.log('End Server main PROGAM path after server.listen(port, hostname, callback) ' + dtVar.getSeconds() + "." + dtVar.getMilliseconds());
