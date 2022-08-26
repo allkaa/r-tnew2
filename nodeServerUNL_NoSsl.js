@@ -61,7 +61,7 @@ else {
 }
 */
 
-const http = require('http');
+const http2 = require('http');
 const urlval = 'http://10.8.194.3:9994/'; // project WinTicsCheckNoSslTEST new at 'http://10.8.194.3:9994/'
 //let reqString = urlval + '?agent=58&type=2&command=checkval&ticket_number=225-13818091-1101234';
 let reqStringVal = urlval + '?agent=58&type=2&command=checkval&ticket_number='; // + search;
@@ -74,7 +74,7 @@ let rawData = '';
 
 const parseString = require('xml2js').parseString;
 //const https = require('https');
-const https = require('http');
+const http = require('http');
 //const { StrictMode } = require('react');
 const urlLegacy = require('url'); // Legacy url module.
 //const { URL } = require('url'); // ES6 url module
@@ -123,8 +123,9 @@ let options = optSsl;
 
 //const server = http.createServer((req, res) => { // request is <http.IncomingMessage>, response is <http.ServerResponse> ...}
 //const server = https.createServer(options);
-const server = https.createServer();
+const server = http.createServer();
 
+/*
 server.on('error', (err) => {
   var dtVar = new Date();
   //throw err;
@@ -133,6 +134,7 @@ server.on('error', (err) => {
   console.log('httpsServer error stack:');
   console.log(err.stack);
 });
+*/
 
 /*
 server.on('connection', (socket) => {
@@ -547,11 +549,16 @@ console.log('After https.createServer ' + dtVar.getSeconds() + "." + dtVar.getMi
 // Begin accepting connections on the specified port and hostname.
 // If hostname is omitted, server will accept connections on the unspecified IPv6 address (::) when IPv6 is available,
 // or the unspecified IPv4 address (0.0.0.0) otherwise.
+console.log(`Server running and listening at http://${hostname}:${port}/ ` + dtVar.getSeconds() + "." + dtVar.getMilliseconds()); // ${expression} is place holders in template literal enclosed by the back-tick (` `) (grave accent) characters.
+/*
+//server.listen(port, hostname, () => {
 server.listen(port, hostname, () => {
   // Place holders in template literals are indicated by the $ (Dollar sign) and curly braces e.g. (${expression}).
   //console.log(`Server running and listening at https://${hostname}:${port}/ ` + dtVar.getSeconds() + "." + dtVar.getMilliseconds()); // ${expression} is place holders in template literal enclosed by the back-tick (` `) (grave accent) characters.
   console.log(`Server running and listening at http://${hostname}:${port}/ ` + dtVar.getSeconds() + "." + dtVar.getMilliseconds()); // ${expression} is place holders in template literal enclosed by the back-tick (` `) (grave accent) characters.
 });
+*/
+server.listen(8000);
 
 dtVar = new Date();
 console.log('End Server main PROGAM path after server.listen(port, hostname, callback) ' + dtVar.getSeconds() + "." + dtVar.getMilliseconds());
@@ -570,7 +577,7 @@ function GetResults(game, drawnum, res2) {
   reqStringGetResults = urlpay + '?agent=16&type=2&command=scheck&game=' + game.toString() + '&draw_results';
   if (drawnum !== 0) reqStringGetResults = reqStringGetResults + '&draw=' + drawnum.toString();
   console.log(reqStringGetResults);
-  http.get(reqStringGetResults, (res) => {
+  http2.get(reqStringGetResults, (res) => {
     const { statusCode } = res;
     const contentType = res.headers['content-type'];
 
@@ -595,7 +602,7 @@ function GetResults(game, drawnum, res2) {
       try {
         //const parsedData = JSON.parse(rawData);
         //console.log(parsedData);
-        console.log(`rawData in client http.on('end', ...) event :`)
+        console.log(`rawData in client http2.on('end', ...) event :`)
         console.log(rawData);
         let reply = '';
         let errmsg = '';
@@ -811,7 +818,7 @@ function GetResults(game, drawnum, res2) {
 function CheckValTicket(ticnum, res2) {
   // reqString e.g. "http://10.8.194.3:9994/?agent=58&type=2&command=checkval&ticket_number="
   console.log(reqStringVal + ticnum);
-  http.get(reqStringVal + ticnum, (res) => {
+  http2.get(reqStringVal + ticnum, (res) => {
     const { statusCode } = res;
     const contentType = res.headers['content-type'];
 
@@ -836,7 +843,7 @@ function CheckValTicket(ticnum, res2) {
       try {
         //const parsedData = JSON.parse(rawData);
         //console.log(parsedData);
-        console.log(`rawData in client http.on('end', ...) event :`)
+        console.log(`rawData in client http2.on('end', ...) event :`)
         console.log(rawData);
         let reply;
         reply = '';
@@ -1278,7 +1285,7 @@ function BuyTicket(ticreq, res2) {
   console.log('|'+reqStringPay + '|')
   txn_id = txn_id + 1;
   //let result = -999;
-  http.get(reqStringPay, (res) => { // reqStringPay + ticreq for manual non-auto.
+  http2.get(reqStringPay, (res) => { // reqStringPay + ticreq for manual non-auto.
     const { statusCode } = res;
     const contentType = res.headers['content-type'];
 
@@ -1305,7 +1312,7 @@ function BuyTicket(ticreq, res2) {
         //let dtVar = new Date();
         //const parsedData = JSON.parse(rawData);
         //console.log(parsedData);
-        console.log(`rawData in client http.on('end', ...) event :`)
+        console.log(`rawData in client http2.on('end', ...) event :`)
         console.log(rawData);
         let reply;
         reply = '';
@@ -1640,8 +1647,8 @@ function BuyTicket(ticreq, res2) {
       }
       //res2.end();
       //return rawData;
-    }); // end of http.get(...)
-  }).on('error', (e) => {  // end of http.get(...) begin http.on('error', ...)
+    }); // end of http2.get(...)
+  }).on('error', (e) => {  // end of http2.get(...) begin http2.on('error', ...)
     // e.message e.g. "connect ETIMEDOUT 10.8.194.3:9993"
     console.error(`Got error: ${e.message}`);
     //if (!e.message.includes('self signed certificate')) {
@@ -1695,7 +1702,7 @@ function BuyTicket(ticreq, res2) {
     res2.end();
     //return e.message;
     //return -4;
-  }); // end of http.on('error', ...) network error timeout, certificate....
+  }); // end of http2.on('error', ...) network error timeout, certificate....
   //return -8888;
 } // end of function BuyTicket(ticnum, res2)
 
