@@ -542,7 +542,6 @@ console.log('After https.createServer ' + dtVar.getSeconds() + "." + dtVar.getMi
 // Begin accepting connections on the specified port and hostname.
 // If hostname is omitted, server will accept connections on the unspecified IPv6 address (::) when IPv6 is available,
 // or the unspecified IPv4 address (0.0.0.0) otherwise.
-console.log(`Server running and listening at http://${hostname}:${port}/ ` + dtVar.getSeconds() + "." + dtVar.getMilliseconds()); // ${expression} is place holders in template literal enclosed by the back-tick (` `) (grave accent) characters.
 /*
 //server.listen(port, hostname, () => {
 server.listen(port, hostname, () => {
@@ -552,12 +551,13 @@ server.listen(port, hostname, () => {
 });
 */
 // https://localhost:8081
-//const hostname = 'localhost';
 // https://unl.test:8081
 //const hostname = 'unl.test';
 //const port = process.env.PORT; //  Windows - default port is 1337 for WebApp and 1542 for ConsoleApp;
+const hostname = 'localhost';
 const port = 8000; // for Linux must be set manually;
 //server.listen(port, hostname, undefined, undefined);
+console.log(`Server running and listening at http://${hostname}:${port}/ ` + dtVar.getSeconds() + "." + dtVar.getMilliseconds()); // ${expression} is place holders in template literal enclosed by the back-tick (` `) (grave accent) characters.
 server.listen(port); // works only this form under Docker image.
 
 dtVar = new Date();
