@@ -99,7 +99,7 @@ const hostname = 'localhost';
 // https://unl.test:8081
 //const hostname = 'unl.test';
 //const port = process.env.PORT; //  Windows - default port is 1337 for WebApp and 1542 for ConsoleApp;
-const port = 8080; // for Linux must be set manually;
+const port = 8000; // for Linux must be set manually;
 
 dtVar = new Date();
 console.log('Before https.createServer() ' + dtVar.getSeconds() + "." + dtVar.getMilliseconds());
