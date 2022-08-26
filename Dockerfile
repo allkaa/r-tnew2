@@ -4,8 +4,9 @@ FROM node:16.15.1
 WORKDIR /app
 COPY ["package.json", "package-lock.json*", "./"]
 #RUN npm install --production
-RUN npm install
+#RUN npm install
+RUN npm install --omit dev
 COPY . .
-EXPOSE  8080
+EXPOSE  8000
 CMD ["/bin/bash"]
 #CMD [ "node", "nodeServerUNL_NoSsl.js" ]
