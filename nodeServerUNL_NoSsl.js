@@ -118,7 +118,7 @@ let options = optSsl;
 //const server = https.createServer(options);
 const server = http.createServer();
 
-/*
+///*
 server.on('error', (err) => {
   var dtVar = new Date();
   //throw err;
@@ -127,7 +127,7 @@ server.on('error', (err) => {
   console.log('httpsServer error stack:');
   console.log(err.stack);
 });
-*/
+//*/
 
 /*
 server.on('connection', (socket) => {
@@ -139,7 +139,7 @@ server.on('connection', (socket) => {
 
 server.on('request', (req, res) => { // request is <http.IncomingMessage>, response is <http.ServerResponse>
   console.log(`req.url =>` + req.url)
-  /*
+  ///*
   req.on('error', (err) => {
     // This prints the error message and stack trace to `stderr`.
     console.log(`httpsServer request 'error' event - error stack: ==> ` + dtVar.getSeconds() + "." + dtVar.getMilliseconds());
@@ -149,7 +149,7 @@ server.on('request', (req, res) => { // request is <http.IncomingMessage>, respo
     console.log(`httpsServer response 'error' event - error code: ==> ` + dtVar.getSeconds() + "." + dtVar.getMilliseconds());
     console.error(err);
   });
-  */
+  //*/
   // The destructuring assignment syntax is a JavaScript expression that makes it possible to unpack values from arrays,
   // or properties from objects, into distinct variables.
   //const { method, url, headers } = req;
@@ -561,7 +561,7 @@ console.log(`Server running and listening at http://${hostname}:${port}/ ` + dtV
 server.listen(port); // works only this form under Docker image.
 
 dtVar = new Date();
-console.log('End Server main PROGAM path after server.listen(port, hostname, callback) ' + dtVar.getSeconds() + "." + dtVar.getMilliseconds());
+console.log('End Server main PROGAM path after server.listen(port) ' + dtVar.getSeconds() + "." + dtVar.getMilliseconds());
 
 // <==================================== GetResults =====================================>
 function GetResults(game, drawnum, res2) {
