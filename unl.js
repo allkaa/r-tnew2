@@ -64,7 +64,7 @@ else {
 //const https = require('https');
 const http = require('http');
 //const { StrictMode } = require('react');
-const urlLegacy = require('url'); // Legacy url module.
+//const urlLegacy = require('url'); // Legacy url module.
 //const { URL } = require('url'); // ES6 url module
 // The querystring module provides utilities for parsing and formatting URL query strings.
 //const qs = require('querystring'); // used as let objBody = qs.parse(body, "\r\n", "=");
@@ -115,7 +115,7 @@ server.on('request', (req, res) => { // request is <http.IncomingMessage>, respo
   console.log(`req.url =>` + req.url)
   res.writeHead(200, { 'Content-Type': 'text/plain' });
   res.write(`Requst req.url ==>` + req.url);
-  return res.end();
+  res.end();
   req.on('error', (err) => {
     // This prints the error message and stack trace to `stderr`.
     console.log(`httpsServer request 'error' event - error stack: ==> ` + dtVar.getSeconds() + "." + dtVar.getMilliseconds());
