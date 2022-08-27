@@ -558,7 +558,12 @@ const hostname = 'localhost';
 const port = 8000; // for Linux must be set manually;
 //server.listen(port, hostname, undefined, undefined);
 console.log(`Server running and listening at http://${hostname}:${port}/ ` + dtVar.getSeconds() + "." + dtVar.getMilliseconds()); // ${expression} is place holders in template literal enclosed by the back-tick (` `) (grave accent) characters.
-server.listen(port); // works only this form under Docker image.
+server.listen(port); // NB! Works only this form under Docker image.
+// If host is omitted, the server will accept connections on the unspecified IPv6 address (::) when IPv6 is available,
+//  or the unspecified IPv4 address (0.0.0.0) otherwise.
+// In the context of servers, 0.0.0.0 can mean "all IPv4 addresses on the local machine".
+// If a host has two IP addresses, 192.168.1.1 and 10.1.2.1, and a server running on the host is configured to listen on 0.0.0.0,
+//  it will be reachable at both of those IP addresses.
 
 dtVar = new Date();
 console.log('End Server main PROGAM path after server.listen(port) ' + dtVar.getSeconds() + "." + dtVar.getMilliseconds());
