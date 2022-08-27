@@ -8,5 +8,5 @@ COPY ["package.json", "package-lock.json*", "./"]
 RUN npm install --omit dev
 COPY . .
 EXPOSE  8000
-CMD ["/bin/bash"]
-#CMD [ "node", "nodeServerUNL_NoSsl.js" ]
+#CMD ["/bin/bash"]
+CMD [ "node", "nodeServerUNL_NoSsl.js" ]
